@@ -1,6 +1,5 @@
 #include "sort.h"
 
-void swap(int *a, int *b);
 
 /**
 * selection_sort - sorts an array using the selection sort algorithm
@@ -29,20 +28,4 @@ void selection_sort(int *array, size_t size)
 		print_array(array, size);
 		i++;
 	}
-}
-
-/**
-* swap - swaps the values of two variables
-* @a: first variable
-* @b: second variable
-*
-* Return: void
-*/
-void swap(int *a, int *b)
-{
-	int temp;
-
-	temp = *a;
-	*a = *b;
-	*b = temp;
 }
