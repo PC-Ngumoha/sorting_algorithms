@@ -12,6 +12,7 @@ void selection_sort(int *array, size_t size)
 {
 	size_t i, j;
 	size_t min_index;
+	int swap;
 
 	i = 0;
 	while (i < size - 1)
@@ -24,7 +25,9 @@ void selection_sort(int *array, size_t size)
 				min_index = j;
 			j++;
 		}
-		swap(&array[i], &array[min_index]);
+		swap = array[i];
+		array[i] = array[min_index];
+		array[min_index] = swap;
 		print_array(array, size);
 		i++;
 	}

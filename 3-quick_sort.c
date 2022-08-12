@@ -46,6 +46,7 @@ long partition(int *array, long lo, long hi, size_t size)
 {
 	long i, j;
 	int pivot;
+	int swap;
 
 	pivot = array[hi];
 	i = lo - 1;
@@ -54,11 +55,15 @@ long partition(int *array, long lo, long hi, size_t size)
 		if (array[j] <= pivot)
 		{
 			i += 1;
-			swap(&array[i], &array[j]);
+			swap = array[i];
+			array[i] = array[j];
+			array[j] = swap;
 		}
 	}
 	i += 1;
-	swap(&array[i], &array[hi]);
+	swap = array[i];
+	array[i] = array[hi];
+	array[hi] = swap;
 	print_array(array, size);
 	return (i);
 }
