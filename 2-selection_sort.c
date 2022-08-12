@@ -25,9 +25,11 @@ void selection_sort(int *array, size_t size)
 				min_index = j;
 			j++;
 		}
+		/* Swaps the two elements */
 		swap = array[i];
 		array[i] = array[min_index];
 		array[min_index] = swap;
+		/* Prints out the reorganized array to the screen. */
 		print_array(array, size);
 		i++;
 	}
